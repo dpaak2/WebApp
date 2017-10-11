@@ -15,17 +15,46 @@
 
 </head>
 <body>
-<h1>로그인</h1>
-<span><label for="id" >ID:</label><input type="text"></span>
-<span><label for="password">PASSWORD:</label><input type="password"></span>
-<span><button id="loginBtn">login</button>
-<button id="joinBtn">회원가입</button></span>
+<div id="wrapper">
+    <div id="container">
+        <div id="content"></div>
+    </div>
+</div>
+
 
 
 </body>
 <script>
-    $('#testBtn').click(function(){
-        alert('테스트 확인!');
-    });
+var compUI={
+      br    :()=>{return $('<br/>');},
+      div   : x=>{return $('<div/>',{id:x});},
+      h1    : x=>{return $('<h1/>',{id:x});},
+      span  : x=>{return $('<span/>',{id:x});},
+      iTxt  : x=>{return $('<input/>',{id:x,type:'text'});},
+      aBtn  : x=>{return $('<a/>',{href:'#', role: 'button', id:x});},
+      iBtn  : x=>{return $('<input/>',{id:x,type:'button'});},
+      image : (x,y)=>{return $('<img/>',{id:x,src:y});},
+      input : (x,y)=>{return $('<input/>',{id:x,type:y});},
+      btn : x=>{return $('<button>',{id:x})},
+      nav: x=>{return $('<nav/>',{id: x});},
+      ul : x=>{return $('<ul/>',{id:x})},
+      li : ()=>{return $('<li/>')},
+      a : ()=>{return $('<a/>',{href:'#'})}
+};
+$('#content').html(
+                '<input type="text" id="id" class="id" placeholder="ID를 입력하세요"/>'+
+                '<input type="password" id="password" class="password" placeholder="비밀번호를 입력하세요" />'
+);
+$('#content').append(compUI.btn('signin-btn'));
+$('#content').append(compUI.btn('signup-btn'));
+$('#signin-btn').text('로그인');
+$('#signup-btn').text('회원가입');
+$('#signin-btn').click(()=>{
+
+});
+$('#signup-btn').click(()=>{
+
+});
+
 </script>
 </html>
